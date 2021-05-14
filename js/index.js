@@ -1,6 +1,8 @@
 let gameCanvasContainer = document.getElementById('game-canvas-container');
 let gameCanvas = document.getElementById('game-canvas');
 let snakeHead = document.getElementById('snake-head');
+let point = document.getElementById('point');
+let score = document.getElementById('score');
 let snake = {
     direction: [1, 1],
     positions: [
@@ -10,6 +12,7 @@ let snake = {
 
 window.onload = () => {
     setGameCanvas();
+    generateRandomPointPosition();
 }
 
 window.onresize = () => {
@@ -21,3 +24,9 @@ const setGameCanvas = () => {
     gameCanvas.style.width = `${ screenVal }px`;
     gameCanvas.style.height = `${ screenVal }px`;
 }
+
+setInterval(() => {
+    spawnPoint();
+    moveSnake();
+    attemptCollect();
+}, 500);

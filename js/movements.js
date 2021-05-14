@@ -3,6 +3,27 @@ const renderBlobPosition = () => {
     snakeHead.style.top = `${ snake.positions[0][1] }%`;
 }
 
+document.onkeydown = (event) => {
+    switch (window.event.keyCode) {
+        case 37:
+            event.preventDefault();
+            setSnakeDirection('left');
+            break;
+        case 38:
+            event.preventDefault();
+            setSnakeDirection('up'); 
+            break;
+        case 39:
+            event.preventDefault();
+            setSnakeDirection('right');
+            break;
+        case 40:
+            event.preventDefault();
+		    setSnakeDirection('down');
+        break;
+    }
+};
+
 const setSnakeDirection = (direction) => {
     switch (direction) {
         case 'right':
@@ -60,7 +81,7 @@ const moveDown = () => {
     }
 }
 
-setInterval(() => {
+const moveSnake = () => {
     if (snake.direction[0] == 1) {
         moveRight();
     } else if (snake.direction[0] == -1) {
@@ -72,4 +93,4 @@ setInterval(() => {
     }
 
     renderBlobPosition();
-}, 500  );
+}
