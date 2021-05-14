@@ -1,5 +1,40 @@
 body {
-    background: rgba(17, 17, 17, 1) !important;
+    background: rgba(23, 23, 23, 1) !important;
     color: white !important;
     font-family: "Nunito", sans-serif !important;
+}
+
+#game-canvas {
+    width: 800px;
+    height: 800px;
+    border-radius: 5% !important;
+}
+
+.nav-arrow {
+    font-size: 1.5em;
+}
+
+.snake-blob {
+    position: relative;
+    width: 10% !important;
+    height: 10% !important;
+    background: white !important;
+    border-radius: 25%;
+}
+
+.snake-eye {
+    position: relative;
+    width: 20%;
+    height: 20%;
+    background: black !important;
+    border-radius: 25%;
+}
+
+.left-eye {
+    top: 20%;
+    left: 20%;
+}
+
+.right-eye {
+    left: 60%;
 }
